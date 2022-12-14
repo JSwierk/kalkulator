@@ -1,0 +1,38 @@
+<html>
+   <head>
+      <title>Kalkulator</title>
+      <script>
+         function calculate(){
+            var a = parseFloat(document.getElementById("number1").value);
+            var b = parseFloat(document.getElementById("number2").value);
+            var op = document.getElementById("operator").value;
+            var calculate;
+            if (op == "add") {
+               calculate = a + b;
+            } else if (op == "min") {
+               calculate = a - b;
+            } else if (op == "div") {
+               calculate = a / b;
+            } else if (op == "mul") {
+               calculate = a * b;
+            }
+            document.getElementById("result").innerHTML = calculate;
+         }
+      </script>
+   </head>
+   <body>
+      <h2>Kalkulator</h2>
+      <form>
+         <input type="number" id="number1" placeholder="Wprowadź pierwszą liczbę"/>
+         <select id="operator">
+            <option value="add">Dodawanie</option>
+            <option value="min">Odejmowanie</option>
+            <option value="div">Dzielenie</option>
+            <option value="mul">Mnożenie</option>
+         </select>
+         <input type="number" id="number2" placeholder="Wprowadź drugą liczbę"/>
+         <input type="button" onclick="calculate()" value="Oblicz"/>
+      </form>
+      <p>Wynik: <span id="result"></span></p>
+   </body>
+</html>
